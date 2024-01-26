@@ -1,7 +1,11 @@
 # Wisata App
 
+<div align="center" width="100%">
+   <img src="/images-readme.png" alt="codebayu">
+</div>
 
 ## Introduction
+
 Wisata App is a service providing hotel, apartment, villa, and alike for B2B consumer (e.g corporate and travel agent).
 
 Click [_here_]() for result.
@@ -11,7 +15,6 @@ Click [_here_]() for result.
 - **Modern Stack**: Built with React.js, a powerful framework, Tailwind CSS for responsive and elegant styling.
 - **Responsive Design**: Ensure a seamless experience across various devices and screen sizes.
 - **Huge selections of hotels**: We partner with various hotel chains all across the world.
-- **Various payment options**: Be flexible with choices of payment. Use eWallet, Credit Card, QRIS, Bank Transfer, or Pay Later.
 
 ## ⚙️ Tech Stack
 
@@ -19,6 +22,7 @@ Click [_here_]() for result.
 - Tailwind CSS
 - Shadcn/ui
 - Axios
+- React Router Dom
 
 ## Getting Started
 
