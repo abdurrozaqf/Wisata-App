@@ -1,4 +1,4 @@
-## Byek! Movies
+## Wisata App
 
 Wisata App is a service providing hotel, apartment, villa, and alike for B2B consumer (e.g corporate and travel agent).
 
