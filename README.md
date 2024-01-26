@@ -1,7 +1,7 @@
 # Wisata App
 
 <div align="center" width="100%">
-   <img src="/images-readme.png" alt="codebayu">
+   <img src="/public/images-readme.png" alt="codebayu">
 </div>
 
 ## Introduction
