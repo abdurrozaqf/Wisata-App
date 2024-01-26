@@ -1,4 +1,6 @@
 import { Property } from "@/utils/apis/stay";
+import { Badge } from "@/components/ui/badge";
+import { Eye, Flame } from "lucide-react";
 
 type Props = {
   property: Property;
@@ -24,9 +26,19 @@ const HeadersDeals = ({ property }: Props) => {
           <h2 className="font-medium text-sm md:text-base">
             {property?.catalog.address_full}
           </h2>
-          <p className="text-sm md:text-base">
-            <span>{property?.catalog.review_rating} Excellent</span> ·
-            <span> {property?.catalog.review_count} reviews</span>
+          <p className="text-sm md:text-base flex items-center gap-x-4">
+            <span className="flex items-center gap-1">
+              <Flame size={20} />
+              <Badge variant={"outline"} className="flex items-center gap-1">
+                {property?.catalog.review_rating} · <span>Excellent</span>
+              </Badge>
+            </span>
+            <span className="flex items-center gap-1">
+              <Eye />
+              <Badge variant={"outline"} className="flex items-center gap-1">
+                {property?.catalog.review_count} · <span>reviews</span>
+              </Badge>
+            </span>
           </p>
         </div>
       </div>
