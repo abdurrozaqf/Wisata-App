@@ -14,7 +14,7 @@ import { convertDataAvability } from "@/utils/hooks/convertDataAvability";
 import { Property, getProperty } from "@/utils/apis/stay";
 
 const index = () => {
-  const { availability } = convertDataAvability();
+  const { availability, isPending } = convertDataAvability();
   const [searchParams, setSearchParams] = useSearchParams();
   const [property, setProperty] = useState<Property>();
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +30,7 @@ const index = () => {
       setSearchParams(searchParams);
     }
     fetchDataProperty();
-  }, [searchParams]);
+  }, []);
 
   async function fetchDataProperty() {
     setIsLoading(true);
@@ -122,13 +122,20 @@ const index = () => {
                   </Button>
                 </div>
               </div>
-              <ul className="w-full flex flex-col gap-y-14">
-                {availability?.map((room) => (
-                  <li key={room.room_name}>
-                    <DealsCard room={room} />
-                  </li>
-                ))}
-              </ul>
+              {isPending ? (
+                <div className="flex h-full mx-auto items-center justify-center">
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <p>Loading</p>
+                </div>
+              ) : (
+                <ul className="w-full flex flex-col gap-y-14">
+                  {availability?.map((room) => (
+                    <li key={room.room_name}>
+                      <DealsCard room={room} />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </TabsContent>
             <TabsContent value="photos">
               <p>PHOTOS</p>

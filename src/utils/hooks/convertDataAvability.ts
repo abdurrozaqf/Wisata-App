@@ -8,7 +8,7 @@ import { getAvailability } from "@/utils/apis/stay";
 
 export const convertDataAvability = () => {
   const [availability, setAvailability] = useState<ConvertAvailability[]>();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, setIsPending] = useState(false);
   const [searchParams] = useSearchParams();
   const { toast } = useToast();
 
@@ -17,7 +17,7 @@ export const convertDataAvability = () => {
   }, [searchParams]);
 
   async function fetchDataAvailability() {
-    setIsLoading(true);
+    setIsPending(true);
     try {
       const querys = Object.fromEntries([...searchParams]);
       const response = await getAvailability({
@@ -74,9 +74,9 @@ export const convertDataAvability = () => {
         variant: "destructive",
       });
     } finally {
-      setIsLoading(false);
+      setIsPending(false);
     }
   }
 
-  return { availability, isLoading, fetchDataAvailability };
+  return { availability, isPending, fetchDataAvailability };
 };

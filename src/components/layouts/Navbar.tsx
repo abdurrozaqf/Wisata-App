@@ -25,14 +25,14 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             src={Logo2}
             alt="Logo Wisata App"
-            className="h-[42px] cursor-pointer"
+            className="h-[42px] cursor-pointer block md:hidden"
           />
         )}
         {pathname !== "/" && (
           <ChevronLeft
             onClick={() => navigate("/")}
             size={35}
-            className="h-[42px] cursor-pointer"
+            className="h-[42px] cursor-pointer block md:hidden"
           />
         )}
         {pathname !== "/" && <Search />}
