@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "@/pages";
-import Terms from "@/pages/terms";
 import Stay from "@/pages/stay";
 
 export default function Router() {
@@ -11,12 +10,8 @@ export default function Router() {
       element: <Home />,
     },
     {
-      path: "/stay/:id_property",
+      path: "/stay/:property_id",
       element: <Stay />,
-    },
-    {
-      path: "/terms",
-      element: <Terms />,
     },
     {
       path: "*",
