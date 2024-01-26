@@ -1,7 +1,7 @@
 # Wisata App
 
 <div align="center" width="100%">
-   <img src="/public/images-readme.png" alt="Wisata App">s
+   <img src="/public/images-readme.png" alt="Wisata App">
 </div>
 
 ## Introduction
