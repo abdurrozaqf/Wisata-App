@@ -7,7 +7,7 @@ const Footer = () => {
         <h1 className="flex gap-x-3 font-medium">
           © Wisata App
           <span>·</span>
-          <Link to="/terms" className="text-slate-500">
+          <Link to="/" className="text-slate-500">
             Terms
           </Link>
         </h1>

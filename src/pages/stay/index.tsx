@@ -4,18 +4,18 @@ import { useEffect, useState } from "react";
 import { Filter, Wallet, Utensils, Loader2 } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import DealsCard from "@/components/elements/DealsCard";
 import { useToast } from "@/components/ui/use-toast";
+import HeadersDeals from "@/components/HeadersDeals";
 import Layout from "@/components/layouts/Layout";
 import { Button } from "@/components/ui/button";
+import DealsCard from "@/components/DealsCard";
 
 import { convertDataAvability } from "@/utils/hooks/convertDataAvability";
 import { Property, getProperty } from "@/utils/apis/stay";
-import HeadersDeals from "@/components/elements/HeadersDeals";
 
 const index = () => {
+  const { availability } = convertDataAvability();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { availability, fetchDataAvailability } = convertDataAvability();
   const [property, setProperty] = useState<Property>();
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -30,7 +30,6 @@ const index = () => {
       setSearchParams(searchParams);
     }
     fetchDataProperty();
-    fetchDataAvailability();
   }, [searchParams]);
 
   async function fetchDataProperty() {
@@ -73,8 +72,6 @@ const index = () => {
     setSearchParams(searchParams);
   }
 
-  console.log(availability);
-
   return (
     <Layout>
       {isLoading ? (
@@ -96,7 +93,7 @@ const index = () => {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="deals" className="w-full">
-              <div className="w-full flex flex-col md:flex-row items-center gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-0 justify-center my-4">
+              <div className="w-full flex flex-col md:flex-row items-center gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-0 justify-center my-4 md:my-10">
                 <p className="font-medium flex items-center">
                   <Filter size={16} className="mr-1" />
                   Filter rooms by
@@ -125,10 +122,11 @@ const index = () => {
                   </Button>
                 </div>
               </div>
-              {/* DATA MAPPING DARI ROOM */}
-              <ul className="w-full flex flex-col gap-y-6">
+              <ul className="w-full flex flex-col gap-y-14">
                 {availability?.map((room) => (
-                  <DealsCard key={room.room_name} room={room} />
+                  <li key={room.room_name}>
+                    <DealsCard room={room} />
+                  </li>
                 ))}
               </ul>
             </TabsContent>

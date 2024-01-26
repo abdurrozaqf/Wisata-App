@@ -1,5 +1,5 @@
 import { getProperty, getAvailability } from "./api";
-import { Property } from "./type";
+import { ConvertAvailability, Property } from "./type";
 
 export { getProperty, getAvailability };
-export type { Property };
+export type { Property, ConvertAvailability };

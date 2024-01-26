@@ -22,14 +22,11 @@ type Props = {
 
 const DealsCard = ({ room }: Props) => {
   return (
-    <li
-      key={room.room_name}
-      className="w-full flex flex-col md:flex-row gap-x-4"
-    >
-      <div className="p-4 block md:hidden">
+    <section className="w-full flex flex-col md:flex-row gap-x-4">
+      <div className="p-4 block md:hidden border-t-2">
         <h1 className="font-medium text-lg flex items-center justify-between mb-2">
           <span className="leading-none">{room.room_name}</span>
-          <span className="w-[90px] border text-blue-500 cursor-pointer font-medium text-base">
+          <span className="w-[90px] text-blue-500 cursor-pointer font-medium text-base">
             See Details
           </span>
         </h1>
@@ -74,7 +71,7 @@ const DealsCard = ({ room }: Props) => {
           />
         </div>
       </div>
-      <div className="flex-1 rounded-lg overflow-hidden border">
+      <div className="flex-1 rounded-lg border overflow-hidden">
         <div className="p-4 hidden md:block">
           <h1 className="font-medium text-lg flex justify-between">
             <span>{room.room_name}</span>
@@ -106,11 +103,11 @@ const DealsCard = ({ room }: Props) => {
                       <span className="text-red-500">Without breakfast</span>
                     </p>
                     <p
-                      className={`flex items-center gap-x-2 mb-6 ${
+                      className={`flex items-start gap-x-2 mb-6 ${
                         room.cancel_policy_description[index] ===
                         "Non-refundable"
                           ? "text-red-500"
-                          : "text-green-600 font-medium"
+                          : "text-green-600"
                       } `}
                     >
                       <Wallet
@@ -121,6 +118,7 @@ const DealsCard = ({ room }: Props) => {
                             ? "red"
                             : "green"
                         }`}
+                        className="mt-1"
                       />
                       <span>{room.cancel_policy_description[index]}</span>
                     </p>
@@ -148,7 +146,7 @@ const DealsCard = ({ room }: Props) => {
                         Total ·{" "}
                         {formatPrice(room.net_price_total_with_bonus[index])}
                       </span>
-                      <p className=" text-slate-500">after tax & fees</p>
+                      <span className=" text-slate-500">after tax & fees</span>
                       <small className="text-slate-500">
                         Member-only price, valid in app only
                       </small>
@@ -171,16 +169,16 @@ const DealsCard = ({ room }: Props) => {
               ) : (
                 <div className="flex justify-between">
                   <div>
-                    <p className="text-green-600 font-medium flex items-center gap-x-2">
+                    <p className="text-green-600 flex items-center gap-x-2">
                       <Utensils size={20} />
                       <span>{meat}</span>
                     </p>
                     <p
-                      className={`flex items-center gap-x-2 mb-6 ${
+                      className={`flex items-start gap-x-2 mb-6 ${
                         room.cancel_policy_description[index] ===
                         "Non-refundable"
                           ? "text-red-500"
-                          : "text-green-600 font-medium"
+                          : "text-green-600"
                       } `}
                     >
                       <Wallet
@@ -191,6 +189,7 @@ const DealsCard = ({ room }: Props) => {
                             ? "red"
                             : "green"
                         }`}
+                        className="mt-1"
                       />
                       <span>{room.cancel_policy_description[index]}</span>
                     </p>
@@ -217,7 +216,7 @@ const DealsCard = ({ room }: Props) => {
                         Total ·{" "}
                         {formatPrice(room.net_price_total_with_bonus[index])}
                       </span>
-                      <p className=" text-slate-500">after tax & fees</p>
+                      <span className=" text-slate-500">after tax & fees</span>
                       <small className="text-slate-500">
                         Member-only price, valid in app only
                       </small>
@@ -242,7 +241,7 @@ const DealsCard = ({ room }: Props) => {
           ))}
         </ul>
       </div>
-    </li>
+    </section>
   );
 };
 

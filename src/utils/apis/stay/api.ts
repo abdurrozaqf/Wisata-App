@@ -1,6 +1,6 @@
-import { Property } from "./type";
-import axiosWithConfig from "../axiosWithConfig";
+import axiosWithConfig from "@/utils/apis/axiosWithConfig";
 import { Availability, Request } from "@/utils/types/api";
+import { Property } from "@/utils/apis/stay";
 
 export const getProperty = async (params?: Request) => {
   try {

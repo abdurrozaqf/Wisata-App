@@ -1,17 +1,20 @@
 import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useToast } from "@/components/ui/use-toast";
 
-import { ConvertAvailability } from "@/utils/apis/stay/type";
+import { ConvertAvailability } from "@/utils/apis/stay";
 import { getAvailability } from "@/utils/apis/stay";
 
 export const convertDataAvability = () => {
   const [availability, setAvailability] = useState<ConvertAvailability[]>();
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
-
   const { toast } = useToast();
+
+  useEffect(() => {
+    fetchDataAvailability();
+  }, [searchParams]);
 
   async function fetchDataAvailability() {
     setIsLoading(true);
