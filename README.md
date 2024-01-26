@@ -8,7 +8,7 @@
 
 Wisata App is a service providing hotel, apartment, villa, and alike for B2B consumer (e.g corporate and travel agent).
 
-Click [_here_](https://wisata-app-peach.vercel.app/) for result.
+Click [_here_](https://wisata-app-plum.vercel.app/) for result.
 
 ## Features
 
