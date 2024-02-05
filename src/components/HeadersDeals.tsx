@@ -8,15 +8,21 @@ type Props = {
 
 const HeadersDeals = ({ property }: Props) => {
   return (
-    <>
-      <div className="w-full flex py-4 md:py-8 gap-x-4 md:gap-x-8 px-2">
+    <div className="w-full py-4 md:py-8 gap-x-4 md:gap-x-8 px-2">
+      <h1 className="font-semibold text-xl block md:hidden mx-2 md:mx-16">
+        {property?.name}{" "}
+        <span className="text-base md:text-xl">
+          {"⭐".repeat(Math.floor(property?.catalog.star_rating!))}
+        </span>
+      </h1>
+      <div className="w-full flex py-4 md:py-8 gap-x-4 md:gap-x-8">
         <img
           src={property?.catalog.hero_image_url.th}
           alt={property?.name}
           className="w-[90px] h-[90px] md:w-[168px] md:h-[168px] rounded-full object-cover mx-2 md:mx-16"
         />
         <div className="flex-1 flex flex-col gap-y-2">
-          <h1 className="font-semibold text-xl">
+          <h1 className="font-semibold text-xl hidden md:block">
             {property?.name}{" "}
             <span className="text-base md:text-xl">
               {"⭐".repeat(Math.floor(property?.catalog.star_rating!))}
@@ -42,8 +48,7 @@ const HeadersDeals = ({ property }: Props) => {
           </p>
         </div>
       </div>
-      <hr />
-    </>
+    </div>
   );
 };
 

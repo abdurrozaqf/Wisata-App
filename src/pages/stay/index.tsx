@@ -1,7 +1,15 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { Filter, Wallet, Utensils, Loader2 } from "lucide-react";
+import {
+  Filter,
+  Wallet,
+  Utensils,
+  Loader2,
+  TagIcon,
+  InfoIcon,
+  GridIcon,
+} from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
@@ -82,14 +90,25 @@ const index = () => {
       ) : (
         <div className="flex flex-col w-full justify-start">
           <HeadersDeals property={property!} />
-          <Tabs defaultValue="deals" className="w-full mt-2">
-            <TabsList className="w-full grid grid-cols-3">
-              <TabsTrigger value="deals">DEALS</TabsTrigger>
+          <Tabs defaultValue="deals" className="w-full">
+            <TabsList className="w-full grid grid-cols-3 md:flex md:grid-cols-none gap-x-6 bg-transparent">
+              <TabsTrigger value="deals">
+                <div className="flex items-center justify-center gap-x-1">
+                  <TagIcon size={18} />{" "}
+                  <span className="hidden md:block">DEALS</span>
+                </div>
+              </TabsTrigger>
               <TabsTrigger value="photos" disabled>
-                PHOTOS
+                <div className="flex items-center justify-center gap-x-1">
+                  <GridIcon size={18} />{" "}
+                  <span className="hidden md:block">PHOTOS</span>
+                </div>
               </TabsTrigger>
               <TabsTrigger value="info" disabled>
-                INFO
+                <div className="flex items-center justify-center gap-x-1">
+                  <InfoIcon size={18} />{" "}
+                  <span className="hidden md:block">INFO</span>
+                </div>
               </TabsTrigger>
             </TabsList>
             <TabsContent value="deals" className="w-full">
@@ -104,7 +123,7 @@ const index = () => {
                     variant={"outline"}
                     className="rounded-full h-6 md:h-8 text-sm md:text-base"
                   >
-                    clear
+                    Clear All
                   </Button>
                   <Button
                     onClick={() => filterDataBreakfast("true")}

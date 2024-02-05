@@ -159,8 +159,10 @@ const DealsCard = ({ room }: Props) => {
                       <MoreHorizontal />
                     </div>
                     <div className="flex flex-col items-end gap-y-4">
-                      <Button className="px-8">Book Now</Button>
-                      <small className="text-blue-600 font-medium">
+                      <Button className="px-8 bg-blue-600 hover:bg-blue-500">
+                        Book Now
+                      </Button>
+                      <small className="text-blue-500 font-normal">
                         ★ Collect 9 points
                       </small>
                     </div>
@@ -229,8 +231,10 @@ const DealsCard = ({ room }: Props) => {
                       <MoreHorizontal />
                     </div>
                     <div className="flex flex-col items-end gap-y-4">
-                      <Button className="px-8">Book Now</Button>
-                      <small className="text-blue-600 font-medium">
+                      <Button className="px-8 bg-blue-600 hover:bg-blue-500">
+                        Book Now
+                      </Button>
+                      <small className="text-blue-500 font-normal">
                         ★ Collect 9 points
                       </small>
                     </div>

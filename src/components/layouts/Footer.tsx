@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-100 w-full flex justify-center p-4">
-      <div className="w-[1032px] h-[64px] flex items-center justify-between">
+    <footer className="bg-slate-100 w-full flex justify-center p-4 mt-12">
+      <div className="w-[1032px] py-4 flex items-center justify-between">
         <h1 className="flex gap-x-3 font-medium">
           © Wisata App
           <span>·</span>
